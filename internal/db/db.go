@@ -11,7 +11,7 @@ func getPostgresDataBaseUrl() string {
 	host := os.Getenv("DB_HOST")
 	user := os.Getenv("DB_USERNAME")
 	password := os.Getenv("DB_PASSWORD")
-	port:=OS.Getenv("DB_PORT")
+	port:=os.Getenv("DB_PORT")
 
 	if host == "" || user == "" || password == "" {
 		host = "localhost"
