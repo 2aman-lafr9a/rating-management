@@ -1,0 +1,44 @@
+syntax = "proto3";
+option go_package = "./proto";
+
+option java_package = "org.example.apigateway.grpc.rating";
+
+package rating;
+
+service Rating{
+    rpc FindById(GetRatingRequest) returns (GetRatingResponse);
+    rpc FindAll(GetRatingsRequest) returns (GetRatingsResponse);
+    rpc Update(UpdateRatingRequest) returns (UpdateRatingResponse);
+}
+
+message GetRatingRequest{
+    string offerId = 1;
+    string playerId = 2;
+}
+
+message GetRatingResponse{
+    RatingItem rating = 1;
+}
+
+message GetRatingsRequest{
+    string offerId = 1;
+    string playerId = 2;
+}
+
+message GetRatingsResponse{
+    repeated RatingItem ratings = 1;
+}
+
+message UpdateRatingRequest{
+  RatingItem rating = 1;
+}
+
+message UpdateRatingResponse{
+  RatingItem rating = 1;
+}
+
+message RatingItem{
+    string playerId = 2;
+    string offerId = 3;
+    int32 rating = 4;
+}
