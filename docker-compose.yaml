@@ -16,6 +16,8 @@ services:
     networks:
       - aman_network
   rating_management:
+    build:
+        context: ./
     ports:
       - "50006:50006"
     restart: always
