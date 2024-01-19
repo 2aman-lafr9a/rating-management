@@ -1,0 +1,34 @@
+version: '3'
+
+services:
+  rating_database:
+    image: postgres
+    container_name: rating_database
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: postgres
+      PGDATA: /var/lib/postgresql/data/pgdata
+      POSTGRES_DB: rating_management
+    volumes:
+      - /var/lib/postgresql/data
+    restart: always
+    networks:
+      - aman_network
+  rating_management:
+    ports:
+      - "50006:50006"
+    restart: always
+    depends_on:
+      - rating_database
+    environment:
+      DB_HOST: rating_database
+      DB_USERNAME: postgres
+      DB_PASSWORD: postgres
+    networks:
+      - aman_network
+
+networks:
+  aman_network:
+    driver: bridge
+    external: true
