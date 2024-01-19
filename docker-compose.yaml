@@ -5,7 +5,7 @@ services:
     image: postgres
     container_name: rating_database
     ports:
-      - "5432:5432"
+      - "5433:5432"
     environment:
       POSTGRES_PASSWORD: postgres
       PGDATA: /var/lib/postgresql/data/pgdata
@@ -27,6 +27,7 @@ services:
       DB_HOST: rating_database
       DB_USERNAME: postgres
       DB_PASSWORD: postgres
+      DB_PORT: 5433
     networks:
       - aman_network
 
