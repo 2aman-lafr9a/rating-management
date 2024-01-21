@@ -27,7 +27,7 @@ services:
       DB_HOST: rating_database
       DB_USERNAME: postgres
       DB_PASSWORD: postgres
-      DB_PORT: 5433
+      DB_PORT: 5432
       DB_NAME: rating_management
     networks:
       - aman_network
