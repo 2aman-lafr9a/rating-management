@@ -28,6 +28,7 @@ services:
       DB_USERNAME: postgres
       DB_PASSWORD: postgres
       DB_PORT: 5433
+      DB_NAME: rating_management
     networks:
       - aman_network
 
