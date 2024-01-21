@@ -19,7 +19,7 @@ func getPostgresDataBaseUrl() string {
 		user = "postgres"
 		password = "password"
 	}
-	return "host=" + host + " user=" + user + " password=" + password + " dbname="+db_name+ "port="+port
+	return "host=" + host + " user=" + user + " password=" + password + " dbname=" + db_name + " port="+port
 }
 
 func PostgresConn() *gorm.DB {
