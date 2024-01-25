@@ -11,7 +11,7 @@ services:
       PGDATA: /var/lib/postgresql/data/pgdata
       POSTGRES_DB: rating_management
     volumes:
-      - /var/lib/postgresql/data
+      - rating_management_volume:/var/lib/postgresql/data
     restart: always
     networks:
       - aman_network
@@ -36,3 +36,5 @@ networks:
   aman_network:
     driver: bridge
     external: true
+volumes:
+  rating_management_volume:
