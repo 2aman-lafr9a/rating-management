@@ -15,9 +15,10 @@ services:
     restart: always
     networks:
       - aman_network
-  rating_management:
+  rating_service:
     build:
         context: ./
+    container_name: rating_service
     ports:
       - "50006:50006"
     restart: always
@@ -31,6 +32,7 @@ services:
       DB_NAME: rating_management
     networks:
       - aman_network
+  
 
 networks:
   aman_network:
